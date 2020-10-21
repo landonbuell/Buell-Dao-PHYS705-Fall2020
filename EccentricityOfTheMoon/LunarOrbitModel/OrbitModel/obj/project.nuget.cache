@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FQmD95ls50OAeVIAIN9wHSkassw6kPeztQgZurM6+YZHXPH9+xEXSqUTYJrEaisEJs2/guU9q2KHMSRBn1HPEQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Landon\\Documents\\GitHub\\Buell-Dao-PHYS705-Fall2020\\EccentricityOfTheMoon\\LunarOrbitModel\\OrbitModel\\OrbitModel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Landon\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
