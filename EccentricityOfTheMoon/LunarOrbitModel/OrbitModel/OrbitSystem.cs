@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace OrbitModel
@@ -11,13 +12,15 @@ namespace OrbitModel
         private string name;
         private List<Body> bodies;
         private int nBodies;
+        private int niters;
         
         public OrbitSystem(string _name)
         {
-            // Contructor Method for Bpody Instance
+            // Contructor Method for OrbitSystem Instance
             this.name = _name;
             this.bodies = new List<Body>();
             this.nBodies = 0;
+            this.niters = 0;
         }
 
         public void AddBody(Body newBody)
@@ -61,54 +64,44 @@ namespace OrbitModel
         public void SystemSummary()
         {
             // Print Summary of This System
+            string _dashes = string.Concat(Enumerable.Repeat("-", 64)) + "\n";
+            List<string> _hdrs = new List<string>
+                { "Index","Name","Mass [kg]","Radius [m]","Volume [m^3]","Density [kg/m^3]"};
+
+            // Create StringBuilder Object to Hold String Summary
+            var stringSummary = new StringBuilder();
+            stringSummary.Append(String.Format("\nSystem Summary:{0}", name));
+            stringSummary.Append("\n"+_dashes);
+            stringSummary.Append(String.Format("{0,-8} {1,-16} {2,-16} {3,-16} {4,-16} {5,-16}\n",
+                                            _hdrs[0],_hdrs[1],_hdrs[2],_hdrs[3],_hdrs[4],_hdrs[5]));
+            for (int i = 0; i <nBodies; i++)
+            {
+                // Go to each body in system & collect attributes
+                List<string> _attrbs = bodies[i].GetAttributes();
+                string _bodyDetails = String.Format("{0,-8} {1,-16} {2,-16} {3,-16} {4,-16} {5,-16}\n",
+                    Convert.ToString(i), _attrbs[0],_attrbs[1], _attrbs[2], _attrbs[3], _attrbs[4]) ;
+                stringSummary.Append(_bodyDetails);
+            }
+            stringSummary.Append(_dashes);
+
+            Console.WriteLine(stringSummary);
+        }
+
+        public void MoveAllBodies()
+        {
+            // Tell Each body to move itself according to position updates
             throw new NotImplementedException();
         }
+
+        public void __Call__(int iters)
+        {
+            // Call this system
+            for (int i=0; i < iters; i++)
+            {
+                // Run each step
+            }
+        }
+
+
     } 
-
-
-
-
-    public class Body
-    {
-        // Represents an Object that Graviationally interacts with other bodies
-        private string name;
-        public double mass;
-        private double radius;
-        private double volume;
-        private double density;
-
-        public Body(string _name, double _mass, double _rad)
-        {
-            // Constructor Method for Body Instance
-            this.name = _name;
-            this.mass = _mass;
-            this.radius = _rad;
-            this.volume = (4 / 3) * Math.PI * Math.Pow(radius, 3);
-            this.density = mass / volume;
-            Position = new double[3] { 0.0, 0.0, 0.0 };
-            Velocity = new double[3] { 0.0, 0.0, 0.0 };
-            Acceleration = new double[3] { 0.0, 0.0, 0.0 };
-        }
-
-        public Body(string _name, double _mass, double _rad,
-                    double[] _x0, double[] _v0)
-        {
-            // Constructor Method for Body Instance
-            this.name = _name;
-            this.mass = _mass;
-            this.radius = _rad;
-            this.volume = (4 / 3) * Math.PI * Math.Pow(radius, 3);
-            this.density = mass / volume;
-            Position = _x0;
-            Velocity = _v0;
-        }
-
-        public double[] Position { get; set; }
-
-        public double[] Velocity { get; set; }
-
-        public double[] Acceleration { get; set; }
-
-
-    }
 }

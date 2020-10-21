@@ -30,7 +30,11 @@ namespace OrbitModel
         public static double[] VectorSubtract(double[] A, double[] B)
         {
             // Compute the vector subtraction of arrays A & B
-            double C = 
+            Debug.Assert(A.Length == B.Length);
+            double[] C = new double[A.Length];
+            for (int i = 0; i < A.Length; i++)
+                C[i] += A[i] - B[i];
+            return C;
         }
 
         public static double[] VectorScale (double[] A, double b)
@@ -40,6 +44,15 @@ namespace OrbitModel
             for (int i = 0; i < A.Length; i++)
                 Ab[i] += A[i]*b;
             return Ab;
+        }
+
+        public static double[] VectorExp(double[] A, double b)
+        {
+            // Raise elements in A to the power of b
+            double[] C = new double[A.Length];
+            for (int i = 0; i < A.Length; i++)
+                C[i] = Math.Pow(A[i], b);
+            return C;
         }
     }
 }

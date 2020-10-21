@@ -1,0 +1,13 @@
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\obj\Debug\netcoreapp3.1\OrbitModel.csprojAssemblyReference.cache
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\obj\Debug\netcoreapp3.1\OrbitModel.AssemblyInfoInputs.cache
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\obj\Debug\netcoreapp3.1\OrbitModel.AssemblyInfo.cs
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\obj\Debug\netcoreapp3.1\OrbitModel.csproj.CoreCompileInputs.cache
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\bin\Debug\netcoreapp3.1\OrbitModel.exe
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\bin\Debug\netcoreapp3.1\OrbitModel.deps.json
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\bin\Debug\netcoreapp3.1\OrbitModel.runtimeconfig.json
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\bin\Debug\netcoreapp3.1\OrbitModel.runtimeconfig.dev.json
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\bin\Debug\netcoreapp3.1\OrbitModel.dll
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\bin\Debug\netcoreapp3.1\OrbitModel.pdb
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\obj\Debug\netcoreapp3.1\OrbitModel.dll
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\obj\Debug\netcoreapp3.1\OrbitModel.pdb
+C:\Users\Landon\Documents\GitHub\Buell-Dao-PHYS705-Fall2020\EccentricityOfTheMoon\LunarOrbitModel\OrbitModel\obj\Debug\netcoreapp3.1\OrbitModel.genruntimeconfig.cache
