@@ -33,7 +33,13 @@ namespace OrbitModel
             nBodies = bodies.Count;
         }
 
-        public double TotalMass()
+        public Body GetBody(int index)
+        {
+            // Get i-th body in list
+            return bodies[index];
+        }
+
+        private double TotalMass()
         {
             // Compute total mass of all bodies in system:
             double _totalMass = 1e-10;  
@@ -43,7 +49,7 @@ namespace OrbitModel
             return _totalMass;
         }
 
-        public double[] CenterOfMass()
+        private double[] CenterOfMass()
         {
             // Compute [x,y,z] Center of Mass of System
             double _totalMass = TotalMass();
@@ -87,10 +93,30 @@ namespace OrbitModel
             Console.WriteLine(stringSummary);
         }
 
-        public void MoveAllBodies()
+        private void MoveAllBodies()
         {
-            // Tell Each body to move itself according to position updates
-            throw new NotImplementedException();
+            // Move each body in the system according to updates
+            for (int i = 0; i < nBodies; i++)
+                bodies[i].Move();
+        }
+
+        private void ComputeAccelerations()
+        {
+            // Clear all acceleration vectors for step
+            for (int i = 0; i < nBodies; i++)
+                bodies[i].Acceleration = new double[]{ 0.0,0.0,0.0,};
+
+            // Compute Acceleration vectors action on each body
+            for (int i = 0; i < nBodies;i++)
+            {
+                for (int j = 0; j < nBodies; j++)
+                {
+                    if (i == j) { continue; }       // Skip if body is the same
+                    double[] _oldAcl = bodies[i].Acceleration;
+                    double[] _newAcl = Physics.ComputeAcceleration(bodies[i], bodies[j]);
+                    bodies[i].Acceleration = LinearAlgebra.VectorAdd(_oldAcl, _newAcl);
+                }
+            }
         }
 
         public void __Call__(int iters)
@@ -98,7 +124,9 @@ namespace OrbitModel
             // Call this system
             for (int i=0; i < iters; i++)
             {
-                // Run each step
+                // Compute the Accelertation acting on each body
+                ComputeAccelerations();
+                MoveAllBodies();
             }
         }
 
